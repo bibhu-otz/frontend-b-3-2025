@@ -1,0 +1,259 @@
+CSS 
+----
+
+- Cascading Style Sheet
+
+- CSS-3
+
+- It is used to provide look and feel to a webpage 
+
+- There Three Different ways we can apply style to a webpage
+
+  1. Inline Style
+
+  2. Internal Style
+
+  3. External style 
+
+
+- Inline Style
+  -------------
+  - We can apply inline style using style attribute of a tag.
+
+  - Inline style generally used when yu try to provide style to a particular tag.
+
+  - Syntax :
+
+       property : value
+
+  - Example:
+
+     <p style="color:red;background-color:yellow">This sample pragraph<p/>
+
+     <p >This sample pragraph<p/>
+
+
+     <p >This sample pragraph<p/>
+
+- Internal Style
+    
+ - We can apply Internal style using style tag inside head tag
+
+ - It is used when we need to apply style to more than one element at a time within same webpage
+
+ - Syntax :
+
+      <head>
+         <style>
+            selectors {
+
+                property:value;
+                property:value
+            }
+         </style>
+
+      </head>
+
+ - Example :
+      <head>
+         <style>
+            h1{
+                color:blue;
+                background-color:yellow;
+                border: 2px solid red;
+                padding:10px;
+            }
+         </style>
+      </head>
+
+     <h1>Heading1</h1>
+     <h1>Heading2</h1>
+     <h1>Heading3</h1>
+
+   - Selectors 
+
+     - There are Three Basic type of selectors present in CSS
+
+       1. Element Selectors   [Directly use tag name{}]
+
+       2. Id Selectors   [#idName{}]
+
+       3. Class Selectors  [.className{}]
+
+     - Apart from all three basic selector there are other selectors also present
+
+       1. Universal Selectors
+
+          *{
+
+
+          }
+
+       2. attribute Selectors
+
+          input[type="text"]{
+
+          }
+
+       3. Inheritance
+
+           ul>li{
+
+           }
+       4. Group Selector
+
+           h1,p,div{
+
+           }
+
+       5. nth selector
+
+3. External CSS 
+
+    a. Create a css file with extension <filename>.css, whcih is called a stylesheet.
+
+    b. Once you Create style sheet then you can place all css property using appropriate
+       selectors.
+
+    c. You can include that stylesheet to those pages which intended to maintain common
+
+       styles.
+
+    d. You can link external stylesheet using 
+    
+       <link rel="stylesheet" type="text/css" href="style1.css" /> tag 
+       <link rel="stylesheet" type="text/css" href="style2.css" />
+
+    Within a page you can link multiple external css
+
+
+-   Priority :
+
+     inline style -> Internal style -> external style
+
+
+Next CLass :
+
+   - Selectors
+
+   - Apply styles using 
+
+
+29-10-2025 :
+------------
+
+CSS Properties and Their Potential Values 
+
+
+body {
+
+   color :"red";
+}
+
+1. Background Style
+
+2. Font Style
+
+3. Border Style
+
+4. List
+
+A. Applying Colors in HTML
+
+   1. Color Names
+
+   2. RGB
+
+      The RGB color scheme can produce 16,777,216 colors, 
+      because there are 256 possible values for each of the three primary colors 
+      (red, green, and blue). This is calculated by multiplying the number
+       of options for each color channel together: 
+       \(256\times 256\times 256=16,777,216\).       
+       How it works: Each of the three color channels (Red, Green, Blue) has 
+       an intensity level that can range from 0 to 255. Maximum intensity: 
+       Setting all three channels to their maximum value (\(255,255,255\)) 
+       creates white. Minimum intensity: Setting all three channels to their minimum 
+       value (\(0,0,0\)) creates black.
+    
+   3. RGBA
+
+   4. Hexadecimal Code
+
+   5. Hexadecimal Shorthad Scheme
+
+   6. CMYK (Cyan ,Magento,YELLOW,)
+
+   7. HSL (Hue ,Saturation , Lightness)
+
+
+Selectors :
+
+1. Core selector types
+
+| Selector  | Example         | Targets                     |
+| --------- | --------------- | --------------------------- |
+| Type      | `p {}`          | all `<p>` elements          |
+| Class     | `.btn {}`       | elements with `class="btn"` |
+| ID        | `#hero {}`      | the element with `id="hero"`|
+| Universal | `* {}`          | all elements                |
+| Grouping  | `h1, h2, h3 {}` | multiple selectors at once  |
+
+2. Combinators (relationships)
+
+| Combinator       | Syntax      | Meaning                                 |
+| -----------------| ----------  | ----------------------------------------|
+| Descendant       | `.card p`   | any `<p>` *inside* `.card`              |
+| Child            | `.card > p` | `<p>` that is a direct child of `.card` |
+| Adjacent sibling | `h2 + p`    | first `<p>` immediately after an `<h2>` |
+| General sibling  | `h2 ~ p`    | all `<p>` siblings after an `<h2>`      |
+
+Example :
+
+<body>
+  <header id="site-header">
+    <h1>Selector Practice</h1>
+    <nav class="main-nav">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="team">
+    <h2>Our Team</h2>
+    <div class="member">
+      <h3>Jane Doe</h3>
+      <p>Designer</p>
+    </div>
+    <div class="member featured">
+      <h3>John Smith</h3>
+      <p>Developer</p>
+    </div>
+  </section>
+</body>
+
+style.css
+---------
+/* type selector */
+h1 { color: #1a237e; }
+
+/* class selector */
+.member { background: #f3f3f3; padding: 1rem; }
+
+/* id selector */
+#site-header { background: #e8eaf6; }
+
+/* grouping */
+h2, h3 { color: #3949ab; }
+
+/* descendant */
+.team p { font-style: italic; }
+
+/* child */
+.team > .member { border-radius: 8px; }
+
+/* adjacent sibling */
+h3 + p { color: #616161; }
+
+/* multiple class */
+.member.featured { background: #c5cae9; }

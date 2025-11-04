@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+       Table is used to display tabular data.
+        It consists of rows and columns.
+        The <table> tag defines the table.
+        The <tr> tag defines a table row.
+        The <th> tag defines a table header.
+        The <td> tag defines a table cell.
+        Example:
+        <table>
+            <caption>Sample Table</caption>
+            <thead>
+                <tr>
+                    <th>Header 1</th>
+                    <th>Header 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                </tr>
+                <tr>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                </tr>
+                <tr>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                </tr>
+            </tbody>
+        </table>
+
+        -> Rowspan and Colspan:
+        Rowspan is used to merge cells vertically.
+        Colspan is used to merge cells horizontally.
+        Example:
+        <table border="1">  
+            <tr>
+                <th rowspan="2">Name</th>
+                <th colspan="2">Contact</th>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+            <tr>
+                <td>John Doe</td>
+                <td>john@example.com</td>
+                <td>0987654321</td>
+                <td>Los Angeles</td>
+            </tr>
+        </table>
+
+        - Cell Padding and Cell Spacing:
+        Cell Padding is the space between the cell content and the cell border.
+        Cell Spacing is the space between the cells.
+        Example:
+        <table border="1" cellpadding="10" cellspacing="5">  
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+            <tr>
+                <td>John Doe</td>
+                <td>john@example.com</td>
+            </tr>
+        </table>
+    -->
+
+         <table 
+         border="1" 
+         align="center" 
+         width="100%" 
+         height="200px" 
+         cellpadding="25" 
+         cellspacing="15">
+            <caption>Student Records</caption>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>City</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>100</td>
+                    <td>Alok Kumar</td>
+                    <td>alok@example.com</td>
+                    <td>1234567890</td>
+                    <td>New York</td>
+                    <td><img src="assets/images/user-1.avif" alt="Alok Kumar" width="50" height="50"></td>
+                </tr>
+                <tr>
+                    <td>101</td>
+                    <td>John Doe</td>
+                    <td>john@example.com</td>
+                    <td>0987654321</td>
+                    <td>Los Angeles</td>
+                    <td><img src="assets/images/user-2.avif" alt="John Doe" width="50" height="50"></td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Jane Smith</td>
+                    <td>jane@example.com</td>
+                    <td>1122334455</td>
+                    <td>Chicago</td>
+                </tr>
+                <tr>
+                    <td>103</td>
+                    <td>Michael Brown</td>
+                    <td>michael@example.com</td>
+                    <td>2233445566</td>
+                    <td>Houston</td>
+                </tr>
+                <tr>
+                    <td>104</td>
+                    <td>Emily Davis</td>
+                    <td>emily@example.com</td>
+                    <td>3344556677</td>
+                    <td>Phoenix</td>
+                </tr>
+                <tr>
+                    <td>105</td>
+                    <td>David Wilson</td>
+                    <td>david@example.com</td>
+                    <td>4455667788</td>
+                    <td>Philadelphia</td>
+                </tr>
+                
+            </tbody>
+         </table>
+</body>
+</html>

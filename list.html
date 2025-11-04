@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Tags Session</title>
+</head>
+<body>
+    <!--
+       In HTML there are three types of lists:
+       1. Ordered List (ol)
+       2. Unordered List (ul)
+       3. Description List (dl)
+
+       Ordered List (ol):
+       - Used when the order of items matters.  
+       - Items are numbered.
+         Example:   
+            <ol>
+                <li>First item</li>
+                <li>Second item</li>
+                <li>Third item</li>
+            </ol>
+        - There different types of numbering styles:
+            a. Decimal (1, 2, 3, ...) (Deafault)
+            b. Lowercase letters (a, b, c, ...)
+            c. Uppercase letters (A, B, C, ...)
+            d. Lowercase Roman numerals (i, ii, iii, ...)
+            e. Uppercase Roman numerals (I, II, III, ...)
+        -Example of different types:
+            <ol type="A">
+                <li>First item</li>
+                <li>Second item</li>
+                <li>Third item</li>
+            </ol>
+
+        - We can also start the numbering from a specific number using the "start" attribute:
+            <ol start="5">
+                <li>Fifth item</li>
+                <li>Sixth item</li>
+                <li>Seventh item</li>
+            </ol>
+            <ol start="7" type="A">
+                <li>Third item</li>
+                <li>Fourth item</li>
+                <li>Fifth item</li>
+            </ol>
+    -->
+
+    <h2>Ordered List Examples</h2>
+    <ol>
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ol>
+    <ol type="A">
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ol>
+    <ol start="5">
+        <li>Fifth item</li>
+        <li>Sixth item</li>
+        <li>Seventh item</li>   
+    </ol>
+    <ol start="60" type="A"> 
+        <li>Third item</li>
+        <li>Fourth item</li>
+        <li>Fifth item</li>
+    </ol>
+    <ol type="i">
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ol>
+
+    <ol start="100" type="I">
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ol>
+     
+    <!--
+        - Unordered List (ul):
+        - Used when the order of items does not matter.
+        - Items are marked with bullets (•).
+        Example:
+            <ul>
+                <li>Item one</li>
+                <li>Item two</li>
+                <li>Item three</li>
+            </ul>   
+        - We can change the bullet style using CSS, but HTML does not provide built-in attributes for this.
+        Example of CSS: 
+            <style>
+                ul.custom-bullets {
+                    list-style-type: square; /* Other options: circle, disc, none */
+                }
+            </style>
+            <ul class="custom-bullets">
+                <li>Item one</li>
+                <li>Item two</li>
+                <li>Item three</li>
+            </ul>
+        - Types of bullet styles using CSS:
+            a. disc (default)
+            b. circle
+            c. square
+            d. none (no bullets)
+    -->
+
+    <h2>Unordered List Examples</h2>
+    <ul>
+        <li>Item one</li>
+        <li>Item two</li>
+        <li>Item three</li>
+    </ul>
+    <ul type="circle">
+        <li>Item one</li>
+        <li>Item two</li>
+        <li>Item three</li>
+    </ul>
+    <ul type="square">
+        <li>Item one</li>
+        <li>Item two</li>
+        <li>Item three</li>
+    </ul>
+    <ul type="none">
+        <li>Item one</li>
+        <li>Item two</li>
+        <li>Item three</li>
+    </ul>
+    <ul type="disc">
+        <li>Item one</li>
+        <li>Item two</li>
+        <li>Item three</li>
+    </ul>
+    <ul type="none" style="margin-left:2;padding:2;">
+        <li>&#8594; Item one</li>
+        <li>&#8594; Item two</li>
+        <li>&#8594; Item three</li> 
+    </ul>
+    <!--
+        Description List (dl):
+        - Used for defining terms and their descriptions.
+        - Consists of pairs of <dt> (definition term) and <dd> (definition description) elements.
+        Example:
+            <dl>
+                <dt>HTML</dt>
+                <dd>HyperText Markup Language</dd>
+                <dt>CSS</dt>
+                <dd>Cascading Style Sheets</dd>
+                <dt>JS</dt>
+                <dd>JavaScript</dd>
+            </dl>
+    -->
+             <dl>
+                <dt>HTML</dt>
+                <dd>HyperText Markup Language</dd>
+                <dt>CSS</dt>
+                <dd>Cascading Style Sheets</dd>
+                <dt>JS</dt>
+                <dd>JavaScript</dd>
+            </dl>
+            <dl>
+                <dt>Python</dt>
+                <dd>A high-level programming language.</dd>
+                <dt>Java</dt>
+                <dd>A class-based, object-oriented programming language.</dd>
+                <dt>C++</dt>
+                <dd>A general-purpose programming language created as an extension of the C programming language.</dd>  
+            </dl>
+</body>
+</html>

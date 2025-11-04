@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+       What is Semantic Tags?
+       Semantic tags are HTML elements that clearly describe their meaning in a human- and 
+       machine-readable way. These tags provide information about the type of content they contain, 
+       making it easier for browsers, search engines, and developers to understand the structure
+      
+       Semantic Tags in HTML5 :
+        1. <header>: Represents introductory content or a set of navigational links.
+        2. <footer>: Represents a footer for its nearest sectioning content or sectioning root element.
+        3. <article>: Represents a self-contained piece of content that could be distributed and reused independently.
+        4. <section>: Represents a thematic grouping of content, typically with a heading.
+        5. <nav>: Represents a section of the page intended for navigation links.
+        6. <aside>: Represents content that is tangentially related to the content around it.
+        7. <main>: Represents the dominant content of the <body> of a document
+        8. <figure>: Represents self-contained content, frequently with a caption (<figcaption>).
+        9. <figcaption>: Represents a caption or legend for a <figure> element.
+        10. <address>: Represents contact information for the author/owner of a document or an article.
+        11. <article>: Represents a self-contained piece of content that could be distributed and reused independently.
+    
+        Purpose:
+        - Improve accessibility for screen readers and other assistive technologies.
+        - Enhance SEO by providing meaningful structure to web pages.
+        - Make the code more readable and maintainable for developers.
+        - Facilitate better styling and layout through CSS by targeting specific sections.
+        - Enable easier content extraction and manipulation via JavaScript.
+        - Support modern web development practices and frameworks.
+        - Promote a clear separation of content and presentation.
+        - Aid in the creation of responsive and adaptive web designs.
+    -->
+    <header>
+        <h1>Welcome to My Website</h1>
+        <nav>
+            <a href="#home">Home</a> |
+            <a href="#about">About</a> |
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h2>Home</h2>
+            <p>This is the home section.</p>
+        </section>
+        <section id="about">
+            <aside>
+                <ul>   
+                    <li>Semantic HTML5 tags improve accessibility.</li>
+                    <li>They provide better SEO.</li>
+                    <li>They make the code more readable.</li>
+                </ul>
+            </aside>
+            <article>
+                <h2>About</h2>
+                <p>This is the about section.</p>
+                <figure>
+                    <img src="about-image.jpg" alt="About Image">
+                    <figcaption>This is an image related to the about section.</figcaption>
+                </figure>
+            </article>
+             <aside>
+                <ul>   
+                    <li>Semantic HTML5 tags improve accessibility.</li>
+                    <li>They provide better SEO.</li>
+                    <li>They make the code more readable.</li>
+                </ul>
+            </aside>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>This is the contact section.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 My Website</p>
+        <address>
+            Contact us at: <a href="mailto:info@mywebsite.com">info@mywebsite.com</a>
+        </address>
+    </footer>
+</body>
+</html>

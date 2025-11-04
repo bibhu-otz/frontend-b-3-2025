@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*Type Selector*/
+        body{
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1{
+           color: #1a237e;
+           text-align: center;
+           border-bottom: #901a1a 1px solid;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        /*Id Selector*/
+        #site-header{
+            background: #e8eaf6;
+        }
+        /*Class Selector*/
+        .member { background: #f3f3f3; padding: 1rem; margin-top: 5px;  } }
+        
+        /*Group Selector*/
+        h2, h3 { color: #3949ab; }
+
+        /*Descendant Selector*/
+        .team p { font-style: italic; }
+
+        /*Child Selector*/
+
+        .team > .member { border-radius: 10px; }
+
+        /*Adjacent Sibling Selector*/
+        h3 + p { color: #901a1a; }
+
+        /*General Sibling Selector*/
+        .member.featured { background: #c5cae9; }
+       
+        /*class Selector*/
+        .main-nav{
+            text-align: center;
+            margin-top: 10px;
+            padding: 15px;
+        }
+        /*Element Selector within a class*/
+        .main-nav a{
+            text-decoration: none;
+            color:gray;
+            border: 1px solid black;
+            padding: 6px;
+            border-radius: 5px;
+        }
+         /*Pseudo-class Selector*/
+        .main-nav a:hover{
+            background-color: black;
+            color: white;
+        }
+        .member:hover{
+            background-color: #4b12b4;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <header id="site-header">
+    <h1>Selector Practice</h1>
+    <nav class="main-nav">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Our Product Gallery</a>
+    </nav>
+  </header>
+
+  <section class="team">
+    <h2>Our Team</h2>
+    <div class="member">
+        <img src="../assets/images/user-1.avif" alt="Team Member 1">
+      <h3>Jane Doe</h3>
+      <p>Designer</p>
+    </div>
+    <div class="member featured">
+        <img src="../assets/images/user-1.avif" alt="Team Member 1">
+      <h3>John Smith</h3>
+      <p>Developer</p>
+    </div>
+    <div class="member featured">
+        <img src="../assets/images/user-1.avif" alt="Team Member 1">
+      <h3>John Smith</h3>
+      <p>Developer</p>
+    </div>
+     <div class="member featured">
+        <img src="../assets/images/user-1.avif" alt="Team Member 1">
+      <h3>John Smith</h3>
+      <p>Developer</p>
+    </div>
+  </section>
+</body>
+</html>

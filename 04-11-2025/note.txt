@@ -1,0 +1,30 @@
+
+TOPIC  : Selectors , BoxModel ,Positioning
+-------------------------------------------
+
+BoxModel :
+----------
+
+ margin
+
+ padding
+
+ border
+
+ *{
+    margin:0;
+    pading:0;
+    box-sizing:border-box;
+ }
+
+BoxModel
+How to calculate width ad height of the element
+
+
+Product Card
+
+
+E-Commenrce Prodcut Card Page  like Flipkart
+
+
+
