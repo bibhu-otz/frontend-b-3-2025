@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 1.5rem;
+            color:gray;
+        }
+        div{
+            background-color: aqua;
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 2px solid gray;
+            border-radius: 10px;
+            box-shadow: 15px 5px 15px rgba(220, 12, 12, 0.3);
+        }
+        h1{
+            text-align: center;
+            margin-bottom: 20px;
+            background-color: gold;
+            font-size:2.0rem;
+            text-transform: uppercase;
+            border-bottom: 10px solid rgb(19, 18, 18);
+        }
+        table{
+            width: 100%;
+            border: 1px dotted gray;;
+            height: auto;
+            padding: 10px;
+
+        }
+        tr td{
+            /* border: 1px solid gray  ; */
+            padding: 10px;
+        }
+        input{
+            width: 100%;
+            padding: 5px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }   
+        button{
+            padding: 5px 10px;
+            font-size: 2.2rem;
+            margin: 5px;
+            width: 15%;
+            border-radius: 5px;
+            border: 1px solid gray;
+            cursor: pointer;
+            background-color: midnightblue;
+            color: white;
+        }
+        button:hover{
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div>
+            <h1>Calculator</h1>
+            <table>
+                <tr>
+                <td>
+                    <label>num1</label>
+                </td>
+                <td>
+                    <input type="number" id="num1"/>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                    <label>num2</label>
+                </td>
+                <td>
+                    <input type="number" id="num2"/>
+                </td>
+                </tr>
+                <tr>
+                <td colspan="2">
+                    <button onclick="add()">+</button>
+                    <button onclick="sub()">-</button>
+                    <button onclick="mul()">*</button>
+                    <button onclick="div()">/</button>
+                    <button onclick="mod()">%</button>
+                </td>
+                </tr>
+                <tr>
+                <td><label>Result</label></td>
+                <td><input type="text" id="result"/></td>
+                </tr>
+            </table>
+    </div>
+    <script>
+       function add(){
+       // alert("Add button clicked");
+         let n1 = document.getElementById("num1").value;
+         let n2 = document.getElementById("num2").value;
+         document.getElementById("result").value = parseInt(n1) + parseInt(n2) ; 
+       }
+       function sub(){
+       // alert("sub button clicked");
+          let n1 = document.getElementById("num1").value;
+         let n2 = document.getElementById("num2").value;
+         document.getElementById("result").value = parseInt(n1) - parseInt(n2) ; 
+       }
+       function mul(){
+        //alert("mul button clicked");
+ let n1 = document.getElementById("num1").value;
+         let n2 = document.getElementById("num2").value;
+         document.getElementById("result").value = parseInt(n1) * parseInt(n2) ; 
+       }
+       function div(){
+        //alert("div button clicked");
+ let n1 = document.getElementById("num1").value;
+         let n2 = document.getElementById("num2").value;
+         document.getElementById("result").value = parseFloat(n1) / parseFloat(n2) ; 
+       }
+       function mod(){
+       // alert("mod button clicked");
+         let n1 = document.getElementById("num1").value;
+         let n2 = document.getElementById("num2").value;
+         document.getElementById("result").value = parseFloat(n1) % parseFloat(n2) ; 
+       }
+    </script>
+</body>
+</html>
