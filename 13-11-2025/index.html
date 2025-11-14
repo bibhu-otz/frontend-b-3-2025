@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+         }
+         body{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.5rem;
+            color:darkslategrey
+         }
+         .container{
+            max-width: 800px;
+            height: auto;
+            margin: 50px auto;
+            padding: 50px;
+            border: 2px solid darkslategrey;
+            border-radius: 10px;
+            box-shadow: 0 0 50px rgba(0,0,0,1);
+            background: #020024;
+            background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+         }
+         .form-section{
+            margin-bottom: 30px;
+            height: auto;
+            border:1px solid rgb(238, 244, 244);
+            padding: 20px;
+            border-radius: 2%;
+            color: rgb(235, 239, 239);
+         }
+         .heading{
+            text-align: center;
+            font-size: 2.0rem;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border-bottom: 5px solid rgb(178, 208, 45);
+         }
+         .mb-3{
+            margin-bottom: 5px;
+            /* border: 1px solid rgb(221, 221, 221); */
+            padding: 5px;         }
+
+        .form-label{
+            display: block;
+            /* border: 1px solid rgb(221, 221, 221); */
+            margin-bottom: 5px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 1.2rem;
+            color:coral
+         }
+        .form-control{
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+         }
+         .form-control:focus{
+            outline: none;
+            border-width: 2px;
+            border-color: rgb(220, 35, 78);
+            box-shadow: 0 0 5px rgba(183, 230, 95, 0.5);
+         }
+         .btn{
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: auto;
+         }
+         .btn:hover{
+            background-color: black;
+            color: yellow;
+         }
+         .btn-primary{
+            background-color: rgb(33, 150, 243);
+            color: white;
+         }
+
+         /*Result Section*/
+         .result-section{
+            border:1px solid rgb(238, 244, 244);
+            padding: 20px;
+            border-radius: 2%;
+            color: rgb(235, 239, 239);
+            display: none;
+         }
+         #result-table{
+            border: 1px solid rgb(221, 221, 221);
+            width: 100%;
+            margin-top: 20px; 
+            border-collapse: collapse;
+
+            td{
+                width:50%;
+            }
+        }
+        tr,td{
+            border: 1px solid rgb(221, 221, 221);
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-section">
+            <h1 class="heading">Student Result Form</h1>
+            
+            <div class="mb-3">
+                <label class="form-label">NAME :</label>
+                <input type="text" class="form-control" id="name"/>
+            </div>
+             <div class="mb-3">
+                <label class="form-label">ROLL :</label>
+                <input type="text" class="form-control" id="roll"/>
+            </div>
+             <div class="mb-3">
+                <label class="form-label">EMAIL :</label>
+                <input type="text" class="form-control" id="email"/>
+            </div>
+             <div class="mb-3">
+                <label class="form-label">PHONE :</label>
+                <input type="text" class="form-control" id="phone"/>
+            </div>
+             <div class="mb-3">
+                <label class="form-label">PHY :</label>
+                <input type="text" class="form-control" id="phy"/>
+            </div>
+             <div class="mb-3">
+                <label class="form-label">CHEM :</label>
+                <input type="text" class="form-control" id="chem"/>
+            </div>
+             <div class="mb-3">
+                <label class="form-label">MATH :</label>
+                <input type="text" class="form-control" id="math"/>
+            </div>
+             <div class="mb-3">
+                <label class="form-label">BIO :</label>
+                <input type="text" class="form-control" id="bio"/>
+            </div>
+            <div class="mb-3">
+               <button class="btn btn-primary" id="submitBtn">Find Result</button>
+            </div>
+        </div>
+        <div class="result-section">
+            <h1 class="heading">Result Sheet</h1>
+            <table id="result-table">
+                <tr>
+                    <td>Name</td>
+                    <td>
+                        <span id="result-name">
+                            Alok Kumar
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Roll</td>
+                    <td>
+                        <span id="result-roll">
+                            1001
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>
+                        <span id="result-email">
+                            alok@gmail.com
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td>
+                        <span id="result-phone">
+                            89898989898
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Phy</td>
+                    <td>
+                        <span id="result-phy">
+                            50
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Chem</td>
+                    <td>
+                        <span id="result-chem">
+                            50
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Math</td>
+                    <td>
+                        <span id="result-math">
+                            50
+                        </span>
+                    </td>
+                </tr>
+                 <tr>
+                    <td>Bio</td>
+                    <td>
+                        <span id="result-bio">
+                            50
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Percentage</td>
+                    <td>
+                        <span id="result-percentage">
+                            50%
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Grade</td>
+                    <td>
+                        <span id="result-grade">C</span>
+                    </td>
+                </tr>
+            </table>
+            <h5 class="message"></h5>
+        </div>
+    </div>
+</body>
+</html>
