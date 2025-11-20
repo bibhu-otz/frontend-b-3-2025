@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #e3e8cf;
+            padding: 20px;
+        }
+        .container{
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        #student-form{
+            color: #fff;
+            margin-bottom: 20px;
+            /* border: 1px solid #0b0b0b; */
+            border-radius: 10px;
+            padding: 20px;
+            background: #8c34c7;
+background: linear-gradient(90deg,rgba(140, 52, 199, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+        }
+        #student-form h1{
+            text-align: center;
+            margin-bottom: 20px;
+            color:rgb(93, 34, 189);
+            text-decoration: underline;
+            font-family: fantasy;
+        }
+        #student-list{
+            margin-top: 10px;
+            border: 1px solid #0d0c0c;
+            padding: 20px;
+        }
+        .mb-3{
+            margin-bottom: 15px;
+            margin-top: 10px;
+            display: flex;
+        }
+        label{
+            width: 100px;
+            font-weight: bold;
+            color: #e7e2e2;
+        }
+        .form-control{
+           width: 100%;
+           height: 30px;
+           border-radius: 5px;
+           border: 1px solid #ccc;
+        }
+        input[type="radio"]{
+            margin-left: 5px;
+            margin-right: 15px;
+            width: 15px;
+            height: 15px;
+            
+        }
+        .btn{
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 50%;
+            display: inline-block;
+            margin: auto;
+        }
+        .btn.btn-primary{
+            background-color: #4CAF50;
+            color: white;
+        }
+        .btn.btn-secondary{
+            background-color: #295d82;
+            color: white;
+        }
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td{
+            border: 1px solid #0d0c0c;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+       <div id="student-form">
+             <div>
+                <h1>STUDENT MANAGEMENT SYSTEM</h1>
+                <hr/>
+                <div class="mb-3">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control"
+                     id="name" name="name"/>
+                </div>
+                 <div class="mb-3">
+                    <label for="rollno">RollNo:</label>
+                    <input type="text" class="form-control" id="rollno" name="rollno"/>
+                </div>
+                <div class="mb-3">
+                    <label for="email">Email:</label>
+                    <input type="text" class="form-control" id="email" name="email"/>
+                </div>
+                 <div class="mb-3">
+                    <label for="phone">Phone:</label>
+                    <input type="text" class="form-control" id="phone" name="phone"/>
+                </div>
+                
+                 <div class="mb-3">
+                    <label for="gender">Gender:</label>
+                    <input type="radio" id="gender" name="gender" value="male"/>Male
+                    <input type="radio" id="gender" name="gender" value="female"/>Female
+                </div>
+                 <div class="mb-3">
+                    <label for="course">Course:</label>
+                    <select id="course" name="course" class="form-control">
+                        <option value="select">Select</option>
+                        <option value="java">Java</option>
+                        <option value="python">Python</option>
+                        <option value="c++">C++</option>
+                        <option value="javascript">JavaScript</option>
+                    </select>
+                </div>
+                 <div class="mb-3">
+                    <button onclick="save()" class="btn btn-primary" type="submit" id="submit-btn">Submit</button>
+                    <button onclick="resetForm()" class="btn btn-secondary" type="reset" id="reset-btn">Reset</button>
+                </div>
+             </div>
+       </div>
+       <div id="student-list">
+           <table border="1" class="table">
+
+               <thead>
+                 <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>RollNo</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Gender</th>
+                    <th>Course</th> 
+                    <th>Actions</th>
+                 </tr>
+               </thead>
+               <tbody id="tbody">
+                 
+               </tbody>
+           </table>
+
+       </div>
+    </div>
+    <script>
+         let students = [];//Empty JS array to hold student objects
+         function save(){
+            //alert('Student information saved successfully!');
+            //STEP 1 : Get the form values
+            let name = document.getElementById('name').value;
+            let rollno = document.getElementById('rollno').value;
+            let email = document.getElementById('email').value;
+            let phone = document.getElementById('phone').value;
+            let genderElements = document.getElementsByName('gender');
+            let gender = '';
+            for(let i = 0; i < genderElements.length; i++) {
+                if(genderElements[i].checked) {
+                    gender = genderElements[i].value;
+                    break;
+                }
+            }
+            let course = document.getElementById('course').value;
+            console.log("NAME " + name);
+            console.log("ROLLNO " + rollno);
+            console.log("EMAIL " + email);
+            console.log("PHONE " + phone);
+            console.log("GENDER " + gender);
+            console.log("COURSE " + course);
+
+
+            
+            //STEP 2 : Validate the form values
+                 //What is the difference between == and === ?
+                 /*
+                    ==  : checks only value  //Equality operator
+                    === : checks value and data type //Strict Equality operator
+
+                    Example:
+                    5 == '5'  : true
+                    5 === '5' : false
+
+                    typeof operator
+                    Example:
+                    typeof 5        // "number"
+                    typeof '5'      // "string"
+                    typeof "hello"  // "string"
+                    typeof true     // "boolean"
+
+                 */
+                //Blank Field Validation
+                // if(name === '' || rollno === '' || email === '' || phone === '' || gender === '' || course === 'select'){
+                //     alert('Please fill all the fields!');
+                //     return; // Stop further execution
+                // }
+                if(name.trim() === ''){
+                    alert('Name cannot be blank!');
+                    document.getElementById('name').focus();
+                    return;
+                }else if(rollno.trim() === ''){
+                    alert('RollNo cannot be blank!');
+                    document.getElementById('rollno').focus();
+                    return;
+                }else if(email.trim() === ''){
+                    alert('Email cannot be blank!');    
+                    document.getElementById('email').focus();
+                    return;
+                }else if(phone.trim() === ''){
+                    alert('Phone cannot be blank!');    
+                    document.getElementById('phone').focus();
+                    return; 
+                }else if(gender.trim() === ''){
+                    alert('Please select gender!');    
+                    document.getElementById('gender').focus();
+                    return;     
+                }else if(course === 'select'){
+                    alert('Please select a course!');   
+                    document.getElementById('course').focus();
+                    return;
+                }
+
+                //Email Validation
+                //Phone Number Validation
+                
+
+            //STEP 3 : Create a new student Object
+            let student = {
+                name:name,
+                rollno:rollno,
+                email:email,
+                phone:phone,
+                gender:gender,
+                course:course
+            };
+            console.log(student);
+           
+            //STEP 4 : Insert the student object into JS Array
+            students.push(student);
+            console.log("Studets List :",students);
+
+            
+            //STEP 5 : Display the student list in table
+             let tbody = document.getElementById('tbody');
+            //  tbody.innerHTML = JSON.stringify(students);
+                tbody.innerHTML = '';
+                for(let i = 0; i < students.length; i++){
+                    let stud = students[i];
+                    let row = `<tr>
+                        <td>${i + 1}</td>
+                        <td>${stud.name}</td>
+                        <td>${stud.rollno}</td>
+                        <td>${stud.email}</td>
+                        <td>${stud.phone}</td>
+                        <td>${stud.gender}</td>
+                        <td>${stud.course}</td>
+                        <td>
+                            <button>Edit</button>
+                            <button>Delete</button>
+                        </td>
+                    </tr>`;
+                    tbody.innerHTML += row;
+                }               
+         }  
+
+         function resetForm(){
+            //alert('Form reset successfully!');  
+            //STEP 1 : Get the reference of the elements
+            //STEP 2 : Clear the form values
+         }
+    </script>
+</body>
+</html>
